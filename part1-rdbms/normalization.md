@@ -70,5 +70,17 @@ If the order    ORD1027    were deleted and it happened to be the  only order fo
 Thus, deleting an order can accidentally delete  customer data , which is a  delete anomaly .
 
 ---
+**Normalization Justification**
+
+Keeping all information in a single table may appear simpler at first, but the dataset demonstrates several problems that arise from this approach. When customer, product, sales representative, and order information are stored together in one flat table, the same data must be repeated across multiple rows. This repetition leads directly to the anomalies identified earlier.
+
+For example, the **sales representative’s office address** appears in many rows because each order handled by that representative repeats the same information. If the office address changes, every row containing that representative’s details must be updated. If one row is missed, the database will contain inconsistent information. This is a clear example of an **update anomaly**, which can compromise data accuracy.
+
+Similarly, product information such as **product name, category, and unit price** is repeated in every order containing that product. If the price of a product changes, multiple records would need to be modified. In a large dataset with thousands of orders, this increases the likelihood of errors and makes maintenance inefficient.
+
+The flat structure also creates **insert and delete anomalies**. For instance, it would not be possible to add a new product to the system unless it appears in an order record. Likewise, deleting the only order associated with a particular customer could result in the loss of that customer’s details from the database entirely.
+
+Normalising the schema to **Third Normal Form (3NF)** resolves these issues by separating the data into related tables such as **customers, products, orders, sales representatives, and order items**. Each table stores information about a single entity, with relationships managed through primary and foreign keys. This design reduces redundancy, ensures consistency, and improves the overall integrity and scalability of the database.
+
 
 If you'd like, I can also help you write the  1NF → 2NF → 3NF normalization section , which usually comes right after this in the assignment.
