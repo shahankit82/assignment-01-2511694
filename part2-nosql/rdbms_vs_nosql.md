@@ -1,0 +1,11 @@
+## Database Recommendation
+
+For a healthcare startup building a patient management system, I would recommend using **MySQL** as the primary database. Healthcare systems manage highly sensitive and structured data such as patient records, appointments, prescriptions, and medical histories. In such environments, **data integrity, consistency, and reliability are critical**, which makes relational databases like MySQL a strong choice.
+
+MySQL follows the **ACID properties (Atomicity, Consistency, Isolation, Durability)**. These properties ensure that transactions are processed reliably and that the database always remains in a valid state. For example, when updating a patient’s treatment record or medication history, it is essential that the change either completes successfully or not at all. This prevents partial updates that could lead to incorrect medical information. In healthcare, even a small inconsistency could have serious consequences for patient safety. Additionally, relational databases enforce **structured schemas and relationships**, which are beneficial when managing interconnected data such as patients, doctors, appointments, and medical records.
+
+In contrast, **MongoDB follows the BASE model (Basically Available, Soft state, Eventually consistent)** and prioritises scalability and flexibility over strict consistency. While MongoDB is highly useful for applications with rapidly changing schemas or large volumes of semi-structured data, its eventual consistency model may not be ideal for core healthcare operations where strong consistency is required.
+
+However, the recommendation could change slightly if the system also includes a **fraud detection module**. Fraud detection systems often analyse large volumes of data in real time, such as billing patterns, insurance claims, or unusual transaction behaviour. In this scenario, a **hybrid approach** could be beneficial. MySQL could remain the primary database for patient records and transactional data, while MongoDB (or another NoSQL database) could be used to store and analyse large-scale behavioural or analytical data used for fraud detection.
+
+Therefore, MySQL would be the best choice for the core patient management system, while NoSQL technologies could complement it for high-volume analytical workloads.
