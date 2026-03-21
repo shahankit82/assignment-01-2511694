@@ -14,4 +14,4 @@ The Lakehouse combines the openness of a lake with warehouse-grade capabilities,
 
 **2. ACID transactions on critical data.** Table formats such as Delta Lake or Apache Iceberg bring transactional semantics to the payment and order tables, ensuring financial records remain consistent even under high-concurrency writes.
 
-**3. Scalable, cost-effective growth.** Object storage (S3/GCS) underpins the lake layer, keeping costs proportional to data volume. As the startup expands cities, the architecture scales horizontally without re-platforming — a significant operational advantage at growth stage.
+**3. Scalable, cost-effective growth.** Object storage underpins the lake layer, keeping costs proportional to data volume. As the startup expands cities, the architecture scales horizontally without re-platforming — a significant operational advantage at growth stage.
