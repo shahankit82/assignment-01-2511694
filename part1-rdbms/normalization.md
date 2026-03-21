@@ -81,6 +81,3 @@ Similarly, product information such as **product name, category, and unit price*
 The flat structure also creates **insert and delete anomalies**. For instance, it would not be possible to add a new product to the system unless it appears in an order record. Likewise, deleting the only order associated with a particular customer could result in the loss of that customer’s details from the database entirely.
 
 Normalising the schema to **Third Normal Form (3NF)** resolves these issues by separating the data into related tables such as **customers, products, orders, sales representatives, and order items**. Each table stores information about a single entity, with relationships managed through primary and foreign keys. This design reduces redundancy, ensures consistency, and improves the overall integrity and scalability of the database.
-
-
-If you'd like, I can also help you write the  1NF → 2NF → 3NF normalization section , which usually comes right after this in the assignment.
